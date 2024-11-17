@@ -86,7 +86,7 @@ The various forms of clients in the system are:
 * **all**
     * navigate the [registry](./Registry.md) (AKA sokosumi)
     * launch agents
-    * submit forms to supply release candidates (to [[#LOCK|locks]])
+    * submit forms to supply release candidates (to _locks_)
     * reconnect, revisit, review, follow, restart, kill, remove, share flow executions 
 
 * **developer** and **administrator** (devops)
