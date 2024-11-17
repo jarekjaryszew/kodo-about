@@ -1,3 +1,5 @@
+# Node
+
 The node is the driver for flow execution. The following sequence diagram shows the interaction between _node_ and the _registry_, _client_, and _flow_. 
 
 ```mermaid

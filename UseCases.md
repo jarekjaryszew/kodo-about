@@ -1,4 +1,6 @@
-# Sebastian Küpers Original Use Cases
+# Use Cases
+
+## Sebastian Küpers Original Use Cases
 
 1. a SP developer can **launch an agentic crew** as API with improved logging and agent monitoring (through a docker container, to allow to easily launch an agentic service)
 2. a SP developer and admin can **discover** available agentic crews within the Serviceplan Group, through a webUI, which is running as part of the docker container, to understand which other services are out there
@@ -7,7 +9,7 @@
 5. a SP developer can **build an agentic crew** which delegates work to another agentic crew through a custom agentic tool for crewAI and waits for their response to process it further
 6. a SP developer can leverage a **shared knowledge base** about clients and topics for their agentic crews to tap into the wider knowledge of the SP group and their agents
 
-## Use Case Details
+### Use Case Details
 
 > **Flows and Crews**
 > _note:_ In the context of use cases the terms _flow_ and _crew_ are used as synonyms.
@@ -30,7 +32,7 @@
     * reviews _(skue#4)_ and monitors a running flow _(skue#1)_
     * revisits a finished flow _(skue#3)_
 
-# Roles
+## Roles
 
 The following roles use and maintain the kodosumi system
 
