@@ -9,13 +9,13 @@ The [registry](./Registry.md) is the central repository for managing and trackin
 #### Collaboration & Interfaces
 
 It synchronises and interacts with all involved parties via restful APIs:
-* clients - **read-only** access to navigate the [registry](./Registry.md) with
+* clients - **read-only** access to navigate the [registry](./Registry.md)
 * [nodes](./Nodes.md) - **read/write** access to go online and offline, heartbeat and health data
 * flows - **no access** 
     * flows run on the [node](./Nodes.md) and the execution is uncorrelated to the _[registry](./Registry.md)_
     * flow usage and health monitoring is the responsibility of the _[node](./Nodes.md)_
 * masumi - **not in scope, yet** - some resource needs to be shared
-    * is masumi the Auth Provider`
+    * is masumi the Auth Provider?
 
 ### node
 
