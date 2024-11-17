@@ -37,7 +37,7 @@ A flow runs and orchestrates one or multiple crews. The entry-point of a flow is
 
 #### Collaboration & Interfaces:
 
-It feeds events into the shared flow state (`Actor`). The [node(./Nodes.md)] processes and persists the flow event stream. Clients consume this event stream connecting to the [node(./Nodes.md)]. On _command-line-level_ (CLI) the `koco` (_kodosumi controller_) intercepts agentic frameworks with callbacks, and stream monitoring.
+It feeds events into the shared flow state (`Actor`). The [node](./Nodes.md) processes and persists the flow event stream. Clients consume this event stream connecting to the [node](./Nodes.md). On _command-line-level_ (CLI) the `koco` (_kodosumi controller_) intercepts agentic frameworks with callbacks, and stream monitoring.
 
 ### event state and stream
 
@@ -61,7 +61,7 @@ A worker is a distributed computation/processing unit. The worker facilitates sc
 
 #### Collaboration & Interfaces:
 
-A cluster of workers execute (stateless) remote procedures and share stateful `Actors` as the event state and stream of flows. The worker shares the event state and stream with other workers and the [node(./Nodes.md)] which drives the execution of flow in a distributed, concurrent cluster environment.
+A cluster of workers execute (stateless) remote procedures and share stateful `Actors` as the event state and stream of flows. The worker shares the event state and stream with other workers and the [node](./Nodes.md) which drives the execution of flow in a distributed, concurrent cluster environment.
 
 ### auth provider
 
@@ -69,7 +69,7 @@ A cluster of workers execute (stateless) remote procedures and share stateful `A
 
 The purpose of the Auth Provider is user and group (role) management, and permission management. All communication cross network depends and relies on the Auth Provider to authenticate and authorize users to access
 
-1) [nodes(./Nodes.md)],
+1) [nodes](./Nodes.md),
 2) flows, 
 3) events (flow details and results)
 
