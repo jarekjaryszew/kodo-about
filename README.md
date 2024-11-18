@@ -20,7 +20,7 @@ design and other docs about kodosumi
 * The [node](./Nodes.md) considers the [flow](./Flows.md) data _obsolete_ after the client who launched the [flow](./Flows.md) has fully downloaded the [flow](./Flows.md).
 * Inter-node communication is considered to be secured and guarded by the network layer below kodosomi framework layer.
 * Authentication and Authorization is handled by an [Auth Provider](./Authentication.md).
-- A secure peer-to-peer communication between client and [node](./Nodes.md) ensures privacy.
+* A secure peer-to-peer communication between client and [node](./Nodes.md) ensures privacy.
 
 ## on _Scalability_
 
