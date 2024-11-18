@@ -7,7 +7,7 @@
 At startup the [node](./Nodes.md) creates the initial local [registry](./Registry.md) and sends it as payload to the first configured registry service.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com",
     flows: [
@@ -88,7 +88,7 @@ Retrieves the global _[registry](./Registry.md)_.
 With the admin panel administrators can register a [node](./Nodes.md). This add the [node](./Nodes.md) to `registry. admins.nodes`:
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com"
 }
@@ -102,7 +102,7 @@ With the admin panel administrators can register a [node](./Nodes.md). This add 
 With the admin panel administrators can unregister a [node](./Nodes.md). This removes the [node](./Nodes.md) from `registry.admins.nodes` and `registry.nodes`.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com"
 }
@@ -116,7 +116,7 @@ With the admin panel administrators can unregister a [node](./Nodes.md). This re
 With the admin panel administrators can post [node](./Nodes.md) meta data to `registry.admins.nodes`. This method replaces the complete entry in `registry.admins.nodes` with the playload. The property `registry.admins.nodes.*.flows` remains unchanged. The record is identified by the [node](./Nodes.md) name and must exist.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com"
     tags: [
@@ -137,7 +137,7 @@ With the admin panel administrators can post [node](./Nodes.md) meta data to `re
 With the admin panel administrators can update dedicated [node](./Nodes.md) meta data. The record is identified by the [node](./Nodes.md) name. All other properties are copied to the [registry](./Registry.md). The record must exist.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com"
     ping: "2024-11-12T11:12+00:00"
@@ -154,7 +154,7 @@ With the admin panel administrators can update dedicated [node](./Nodes.md) meta
 With the admin panel administrators can post [flow](./Flows.md) meta data to `registry.admins.nodes.*.flows`. This method replaces the complete entry in `registry.admins.nodes.*.flows` with the playload. All other [node](./Nodes.md) properties remain unchanged. The record is identified by the `node` name and the flow `name`. The node must exist.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com",
     name: "Competitor Analysis",
@@ -173,7 +173,7 @@ With the admin panel administrators can post [flow](./Flows.md) meta data to `re
 With the admin panel administrators can update dedicated [flow](./Flows.md) meta data. The record is identified by the `node` name and the flow `name`. All other attributes are copied to the [registry](./Registry.md). The record must exist.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com",
     name: "Competitor Analysis",
@@ -201,7 +201,7 @@ Retrieves [node](./Nodes.md) and [registry](./Registry.md) server state with
 Sends [node](./Nodes.md) service state to the [registry](./Registry.md) service. This represents the heartbeat.
 
 **payload:**
-```json
+```
 {
     node: "flows.serviceplan.com",
     registry: "2024-11-12T11:12+00:00"
@@ -225,7 +225,7 @@ which updates the `ping` property.
 Launches a [flow](./Flows.md) on the connected [node](./Nodes.md). The [flow](./Flows.md) is identified by its name which is unique on the [node](./Nodes.md).
 
 **payload:**
-```json
+```
 {
     name: "Competitor Analysis",
     inputs: {
@@ -291,7 +291,7 @@ Acknowledge a [flow](./Flows.md) in state _error_ or _done_, else fail with `400
 Share a [flow](./Flows.md) with a user. This request creates a `.role`  file next to the flow's _event log_ (`.log`) and _event stream_ (`.ev`). This allows the enrolled users to download the [flow](./Flows.md) from the [node](./Nodes.md).
 
 **payload:**
-```json
+```
 {
     name: "Competitor Analysis",
     roles: [
@@ -314,7 +314,7 @@ Renders the lock demand `lid` of flow `fid` as JSON or as an HTML form.
 Posts a unlock candidate attributes with lock `lid` and flow `fid`.
 
 **payload:**
-```json
+```
 {
     fid: "1234-5678-91011",
     lid: "1234-5678-91011",
