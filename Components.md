@@ -78,36 +78,3 @@ A worker is a distributed computation/processing unit. The worker facilitates sc
 #### Collaboration & Interfaces:
 
 All parties rely on the Auth Provider to authorize users and to query access permissions for users.
-
-### client
-
-The various forms of clients in the system are:
-
-* **all**
-    * navigate the [registry](./Registry.md) (AKA sokosumi)
-    * launch agents
-    * submit forms to supply release candidates (to _locks_)
-    * reconnect, revisit, review, follow, restart, kill, remove, share flow executions 
-
-* **developer** and **administrator** (devops)
-    * a simple local restful API and to navigate the local [registry](./Registry.md)
-    * a collection of desktop tools and clients to develop flows, crews, agents, tasks, and tools (AKA Development Environment or IDE)
-    * review runtime behavior
-    * mesh the [registry](./Registry.md) - there might be [registry](./Registry.md) properties which merge, allow tweaking
-    * cleanup stale data, logs and states, locally and in the cluster
-    * scale the cluster of [node](./Nodes.md) and workers up and down
-
-### vacuum & cleanup
-
-#### Purpose:
-
-The [node](./Nodes.md) driver creates event files and a vast amount of logging records for each flow execution. Each [node](./Nodes.md) must therefore cleanup the following storage elements:
-* stale log files
-* stale event files
-* stale flow shares
-* stale short-term and long-term memory
-
-#### Collaboration & Interfaces:
-
-No collaboration required. Each [node](./Nodes.md) operator is responsible to run regular cleanup procedures.
-

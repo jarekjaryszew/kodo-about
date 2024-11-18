@@ -15,22 +15,22 @@
 > _note:_ In the context of use cases the terms _flow_ and _crew_ are used as synonyms.
 
 * A developer 
-    * implements, maintains and tests _(skue#1?)_ a flow
-    * integrates an existing flow into his flow _(skue#3 and skue#5)_.
-    * publishes, deploys and promotes a flow _(skue#1 and skue#2)_
-    * publishes, deploys and promotes long-term memory updates _(skue#6)_
-    * scales the cluster up/down/auto _(skue#1 on docker)_
-    * reviews the usage, runtime, errors, and results of flows _(skue#4)_
+    * implements, maintains and tests _(skue#1?)_ a [flow](./Flows.md)
+    * integrates an existing [flow](./Flows.md) into his [flow](./Flows.md) _(skue#3 and skue#5)_.
+    * publishes, deploys and promotes a [flow](./Flows.md) to a [node](./Nodes.md) _(skue#1 and skue#2)_
+    * publishes, deploys and promotes long-term memory updates to a [node](./Nodes.md) _(skue#6)_
+    * scales the [node](./Nodes.md)  up/down/auto _(skue#1 on docker)_
+    * reviews the usage, runtime, errors, and results of [flows](./Flows.md) and [node](./Nodes.md) _(skue#4)_
 * An operator
     * creates and manages users and access groups
-    * grants and revokes node and flow access to users and groups
+    * grants and revokes [node](./Nodes.md) and [flow](./Flows.md) access to users and groups
 * A business user
-    * browses and searches for available flows _(skue#2 and skue#3)_
-    * launches a flow with input _(skue#3)_
-    * kills a running flow
-    * restarts a flow
-    * reviews _(skue#4)_ and monitors a running flow _(skue#1)_
-    * revisits a finished flow _(skue#3)_
+    * browses and searches for available [flows](./Flows.md) _(skue#2 and skue#3)_
+    * launches a [flow](./Flows.md) with input _(skue#3)_
+    * kills a running [flow](./Flows.md)
+    * restarts a [flow](./Flows.md)
+    * reviews _(skue#4)_ and monitors a running [flow](./Flows.md) _(skue#1)_
+    * revisits a finished [flow](./Flows.md) _(skue#3)_
 
 ## Roles
 
@@ -41,3 +41,17 @@ The following roles use and maintain the kodosumi system
 * (System) Developer - implement the framework
 * (Workflow) Developer - implement and optimize prompts
 * Business User - start agents and consume results
+
+# Clients
+
+The clients of the system are used to
+
+* navigate the [registry](./Registry.md)
+* launch flows on a [node](./Nodes.md)
+* submit forms to supply input to flows
+* reconnect, follow, revisit, review, restart, kill, remove, and share individual [flow](./Flows.md) executions
+* a collection of desktop tools and clients to develop flows, crews, agents, tasks, and tools (AKA Development Environment or IDE)
+* review runtime behavior on a [node](./Nodes.md)
+* mesh the [registry](./Registry.md)
+* cleanup stale data, logs and states
+* scale the [node](./Nodes.md) and workers up and down
