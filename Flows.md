@@ -6,4 +6,5 @@ A dynamic property `state` is calculated based on the following rule:
 
 * `error` if event _fatal_ exists
 * else: `done` if event _done_ exists
+* else: `locked` if a _lock_ exists
 * else: `pending`
