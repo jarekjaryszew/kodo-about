@@ -45,3 +45,9 @@ The [node](./Nodes.md) driver creates event files and a vast amount of logging r
 * stale event files
 * stale shares
 * stale short-term and long-term memory
+
+## on _Telemetry, and Tracing_
+
+Some agentic frameworks (like crewai) integrate open telemetry to realize _observability_ of all activities (see also [langtrace](https://www.langtrace.ai)).
+
+**POV:** Langtrace, observability and telemetry have their justification. Also in the context of agentic workflows. The important thing is the layer on which they play a role: this is the model layer (regardless of whether the model is crewai, langchain, or any other framework). Our 3 frameworks (kodo, soko, masu) lie above that layer. I recommend choosing a more lightweight approach to observability at that level. Especially since the vision is different: a peer-to-peer network of nodes. How tracing is done within a node or a flow, and whether traces, metrics, and spans potentially represent a control component in the flow, should be decided by the node developer. But don't misunderstand: this does not mean that events and observables in kodo/soko/masu do not play a role. I just wouldn't rely on telemetry and micro traces. This paradigm understands the system as "its own," "it's belonging". In that sense, the flow/crew/agent doesn't belong to us like an IoT provider. 
