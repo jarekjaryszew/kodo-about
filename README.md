@@ -10,6 +10,7 @@ design and other docs about kodosumi
   * [Nodes](./Nodes.md)
   * [Flows](./Flows.md)
   * [Events](./Events.md)
+  * [Authentication and Authorization](./Authentication.md)
 * [Endpoints](./Endpoints.md)
 
 ## on _Privacy_ and _Security_
