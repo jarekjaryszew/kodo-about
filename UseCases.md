@@ -47,10 +47,10 @@ The following roles use and maintain the kodosumi system
 The clients of the system are used to
 
 * navigate the [registry](./Registry.md)
-* launch flows on a [node](./Nodes.md)
-* submit forms to supply input to flows
+* launch [flow](./Flows.md) on a [node](./Nodes.md)
+* submit forms to supply input to [flows](./Flows.md)
 * reconnect, follow, revisit, review, restart, kill, remove, and share individual [flow](./Flows.md) executions
-* a collection of desktop tools and clients to develop flows, crews, agents, tasks, and tools (AKA Development Environment or IDE)
+* a collection of desktop tools and clients to develop [flows](./Flows.md), crews, agents, tasks, and tools (AKA Development Environment or IDE)
 * review runtime behavior on a [node](./Nodes.md)
 * mesh the [registry](./Registry.md)
 * cleanup stale data, logs and states
