@@ -8,6 +8,7 @@ design and other docs about kodosumi
 * [Components](./Components.md)
   * [Registry](./Registry.md)
   * [Nodes](./Nodes.md)
+  * [Handshake of Nodes and Registry](./Handshake.md)
   * [Flows](./Flows.md)
   * [Events](./Events.md)
   * [Authentication and Authorization](./Authentication.md)
