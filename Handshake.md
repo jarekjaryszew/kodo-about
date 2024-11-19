@@ -10,7 +10,7 @@ A node starts up and opens the following endpoints. The list of flows is based o
 * `GET | POST /clean` - cleanup stale storage
 * `POST /shutdown` - gracefully shut down the node
 
-If the node connects to one or more registries, then the node uses `POST /connect` and `POST /disconnect` to each registry service. See [#REGISTRY STARTUP](#REGISTRY STARTUP) and [#HANDSHAKE](#HANDSHAKE BETWEEN NODE AND REGISTRY)
+If the node connects to one or more registries, then the node uses `POST /connect` and `POST /disconnect` to each registry service. See **REGISTRY STARTUP** and **HANDSHAKE**.
 
 ### REGISTRY STARTUP
 A registry starts up and opens the following endpoints. The list of flows is based on a scope file (i.e. `node1.yaml`) or some _auto-discovery_. 
