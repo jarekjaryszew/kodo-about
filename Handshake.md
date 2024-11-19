@@ -1,6 +1,7 @@
 ## STARTUP SEQUENCE
 
 > **NOTE** on Authorization & Access Control
+> 
 > Authorization and access control provides the **Auth Provider** and is _not_ 
 > in scope of the _node_ or _registry_ services.
 >
