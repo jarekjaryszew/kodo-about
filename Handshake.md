@@ -138,5 +138,7 @@ GET /state
 
 It it the decision and responsibility of the _node_ to deliver additional information like _usage_, _availability_, _performance_.
 
+**RFC:** We see advantage in an _active pull from the registry_. With this approach the _registry_ has more degress of freedom to add "tests" and provide _certificates_ on service quality. In contrast to this an active _push from the node_ limits the options of the registry to control and promote _quality of service_.
+
 ### REGISTRY DISCONNECTION
 The node disconnects from the registry with `POST /disconnect`. The method updates attribute `nodes["flows.serviceplan.com"]["online"] = None`. The client must decide how to handle nodes offline (_hide_ or _show_ them).

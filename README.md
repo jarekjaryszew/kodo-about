@@ -37,7 +37,7 @@ A simple `bumpy.py` script overwrites the semantic version number (_major, minor
 
 ## on _Monitoring and Health Checks_
 
-The [node](./Nodes.md) `POST /state` on a regular basis to the [registry](./Registry.md) service. This _heartbeat_ contains top-level [node](./Nodes.md) performance values (`PING`). `kodo` does **not** track usage information.
+The [node](./Nodes.md) `POST /state` on a regular basis to the [registry](./Registry.md) service. This _heartbeat_ contains top-level [node](./Nodes.md) performance values (`PING`). `kodo` does **not** track usage information. Wether the _registry_ is active and pulls health data from the node or the _node_ is active and pushes health data to the registry is [open for discussion](./Handshake.md#heartbeat).
 
 ## on _Housekeeping_
 
