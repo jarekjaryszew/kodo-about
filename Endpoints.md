@@ -28,6 +28,8 @@ At startup the [node](./Nodes.md) creates the initial local [registry](./Registr
 
 The registry server to connect to are configured with OS variable `KODO_REGISTRY`.
 
+**RFC:** rename this endpoint to `POST /connect`
+
 ```text
 # .env
 KODO_REGISTRY="1.2.3.4 5.6.7.8"
@@ -45,6 +47,8 @@ from http headers
 
 **response:**
 Redirect to `GET /nodes`
+
+**RFC:** rename this endpoint to `POST /disconnect`
 
 ### `GET /nodes`
 
@@ -168,6 +172,9 @@ With the admin panel administrators can post [flow](./Flows.md) meta data to `re
 **response:**
 `200 OK` with full [flow](./Flows.md) data or `404 Not Found`.
 
+**RFC:** not sure if this endpoint is obsolete. We do not need to manage flow meta data with the registry. Only node meta data (online/offline) is relevant.
+
+
 ### `PUT /flows`
 
 With the admin panel administrators can update dedicated [flow](./Flows.md) meta data. The record is identified by the `node` name and the flow `name`. All other attributes are copied to the [registry](./Registry.md). The record must exist.
@@ -183,6 +190,8 @@ With the admin panel administrators can update dedicated [flow](./Flows.md) meta
 
 **response:**
 `200 OK` with full flow data or `404 Not Found`.
+
+**RFC:** same comment above on `POST /flows`
 
 ## General API
 
