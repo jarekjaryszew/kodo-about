@@ -45,6 +45,7 @@ The [node](./Nodes.md) driver creates event files and a vast amount of logging r
 * stale event files
 * stale shares
 * stale short-term and long-term memory
+* the registry must cleanup stale nodes data (_offline_ or _unknown_)
 
 ## on _Telemetry, and Tracing_
 
