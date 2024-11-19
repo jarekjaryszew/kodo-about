@@ -32,27 +32,27 @@ If a node interacts with a registry it connects with
 **payload:**
 ```json
 {
-    node: "flows.serviceplan.com",
-    flows: [
+    "node": "flows.serviceplan.com",
+    "flows": [
         {
-            path: "flows.serviceplan.public.CompetitorAnalysis",
-            name: "Competitor Analysis",
-            source: "./yaml/competitor.yaml",
-            description: "...",
-            author: "m.rau@house-of-communication.com",
-            organization: "Plan.Net Journey GmbH & Co. KG",
-            published: "2024-11-12T11:12+00:00",
-            release: "0.1.2"
+            "path": "flows.serviceplan.public.CompetitorAnalysis",
+            "name": "Competitor Analysis",
+            "source": "./yaml/competitor.yaml",
+            "description": "...",
+            "author": "m.rau@house-of-communication.com",
+            "organization": "Plan.Net Journey GmbH & Co. KG",
+            "published": "2024-11-12T11:12+00:00",
+            "release": "0.1.2"
         },
         {
-            path: "flows.serviceplan.trend.Analysis()",
-            name: "Trend Analysis",
-            source: "flows.serviceplan.trend.Analysis()",
-            description: "...",
-            author: "m.rau@house-of-communication.com",
-            organization: "Plan.Net Journey GmbH & Co. KG",
-            published: "2024-11-12T11:12+00:00",
-            release: "0.1.2"
+            "path": "flows.serviceplan.trend.Analysis()",
+            "name": "Trend Analysis",
+            "source": "flows.serviceplan.trend.Analysis()",
+            "description": "...",
+            "author": "m.rau@house-of-communication.com",
+            "organization": "Plan.Net Journey GmbH & Co. KG",
+            "published": "2024-11-12T11:12+00:00",
+            "release": "0.1.2"
         }
     ]
 }
@@ -62,8 +62,8 @@ This is the minimum required information for each flow. A flow record with incom
 All flows and the node are rejected if the registry did not register the node before with `POST /register`. This `POST` creates the following **`registry.admins`** record:
 ```json
 {
-    admins: {
-        nodes: ["flows.serviceplan.com"]
+    "admins": {
+        "nodes": ["flows.serviceplan.com"]
     }
 }
 ```
@@ -73,8 +73,8 @@ An admin can revoke this registry record with `DELETE /register` which pops the 
 The response of `POST /connect` lists the accepted list of flows for the connecting node.
 ```json
 {
-    name: "flows.serviceplan.com",
-    flows: [
+    "name": "flows.serviceplan.com",
+    "flows": [
         "flows.serviceplan.public.CompetitorAnalysis",
         "flows.serviceplan.trend.Analysis()",
     ]
@@ -85,30 +85,33 @@ After node connection, the registry service responds to clients' `GET /flows` an
 
 ```json
 {
-    nodes:
-      - node: "flows.serviceplan.com",
-        online: "2024-11-12T08:00:00",
-        heartbeat: "2024-11-12T11:12:01",
-        flows:
+    "nodes": [
         {
-            path: "flows.serviceplan.public.CompetitorAnalysis",
-            name: "Competitor Analysis",
-            source: "./yaml/competitor.yaml",
-            description: "...",
-            author: "m.rau@house-of-communication.com",
-            organization: "Plan.Net Journey GmbH & Co. KG",
-            published: "2024-11-12T11:12+00:00",
-            release: "0.1.2"
-        },
-        {
-            path: "flows.serviceplan.trend.Analysis()",
-            name: "Trend Analysis",
-            source: "flows.serviceplan.trend.Analysis()",
-            description: "...",
-            author: "m.rau@house-of-communication.com",
-            organization: "Plan.Net Journey GmbH & Co. KG",
-            published: "2024-11-12T11:12+00:00",
-            release: "0.1.2"
+            "node": "flows.serviceplan.com",
+            "online": "2024-11-12T08:00:00",
+            "heartbeat": "2024-11-12T11:12:01",
+            "flows": [
+                {
+                    "path": "flows.serviceplan.public.CompetitorAnalysis",
+                    "name": "Competitor Analysis",
+                    "source": "./yaml/competitor.yaml",
+                    "description": "...",
+                    "author": "m.rau@house-of-communication.com",
+                    "organization": "Plan.Net Journey GmbH & Co. KG",
+                    "published": "2024-11-12T11:12+00:00",
+                    "release": "0.1.2"
+                },
+                {
+                    "path": "flows.serviceplan.trend.Analysis()",
+                    "name": "Trend Analysis",
+                    "source": "flows.serviceplan.trend.Analysis()",
+                    "description": "...",
+                    "author": "m.rau@house-of-communication.com",
+                    "organization": "Plan.Net Journey GmbH & Co. KG",
+                    "published": "2024-11-12T11:12+00:00",
+                    "release": "0.1.2"
+                }
+            ]
         }
     ]
 }
