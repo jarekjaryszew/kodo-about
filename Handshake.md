@@ -22,7 +22,8 @@ A node starts up and opens the following endpoints. The list of flows is based o
 If the node connects to one or more registries, then the node uses `POST /connect` and `POST /disconnect` to each registry service. See **REGISTRY STARTUP** and **HANDSHAKE**.
 
 ### REGISTRY STARTUP
-A registry starts up and opens the following endpoints. The list of flows is based on a scope file (i.e. `node1.yaml`) or some _auto-discovery_. 
+A registry starts up and opens the following endpoints. The list of flows is cached and based on the previous execution. This facilitates failover handling.
+
 * `GET /nodes` - query the list of nodes (`n>=0`)
 * `GET /flows` - query the list of flows
 * `POST /connect` and `POST /disconnect` for nodes
@@ -64,7 +65,7 @@ If a node interacts with a registry it connects with
 ```
 This is the minimum required information for each flow. A flow record with incomplete data is rejected. The node is responsible to maintain a unique `path`. The display `name` is human readable and can be changed.
 
-All flows and the node are rejected if the registry did not register the node before with `POST /register`. This `POST` creates the following **`registry.admins`** record:
+The node and all related flows are rejected if the registry did not register the node before with `POST /register`. This `POST` creates the following **`registry.admins`** record:
 ```json
 {
     "admins": {
@@ -73,7 +74,7 @@ All flows and the node are rejected if the registry did not register the node be
 }
 ```
 
-An admin can revoke this registry record with `DELETE /register` which pops the node from `registry.admins.nodes`.
+An admin can revoke this registry record with `DELETE /register` which pops the node from `registry.admins.nodes` and from `registry.nodes`.
 
 The response of `POST /connect` lists the accepted list of flows for the connecting node.
 ```json
@@ -124,7 +125,7 @@ After node connection, the registry service responds to clients' `GET /flows` an
 
 ### HEARTBEAT
 #### ALTERNATIVE 1: active node
-The node sends _heartbeats_ to the registry in regular intervals. This ping mechanism allows the registry to decide which nodes are reachable. A node with `now() - heartbeat > 300'` is considered _not alive_:
+The node sends _heartbeats_ to the registry in regular intervals. This ping mechanism allows the registry to decide which nodes are reachable. A node with `now() - heartbeat > 300'` is considered _not alive_.
 ```
 PUT /state
 ```
