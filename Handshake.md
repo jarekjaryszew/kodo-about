@@ -1,4 +1,12 @@
 ## STARTUP SEQUENCE
+
+> **NOTE** on Authorization & Access Control
+> Authorization and access control provides the **Auth Provider** and is _not_ 
+> in scope of the _node_ or _registry_ services.
+>
+> Each service (node and registry) contact the AuthProvider on at their own
+> discretion.
+
 ### NODE STARTUP
 A node starts up and opens the following endpoints. The list of flows is based on a scope file (i.e. `node1.yaml`) or some _auto-discovery_ mechanism.
 * `GET /flows` - query the list of flows
@@ -20,10 +28,6 @@ A registry starts up and opens the following endpoints. The list of flows is bas
 * `GET /state`  - give health information
 * `GET | POST /clean` - cleanup stale storage
 * `POST /shutdown` - gracefully shut down the node
-
-If the node connects to one or more registries, then the node uses `POST /connect` and `POST 
-
-Authorization and access control provides the **Auth Provider** and is _not_ in scope of the _node_ or _registry_ services.
 
 ### HANDSHAKE BETWEEN NODE AND REGISTRY
 If a node interacts with a registry it connects with 
