@@ -68,3 +68,6 @@ A flow is identified by its `yaml` file path, or a `crewai` `Crew` or `Flow` pac
 * `flow://soko.serviceplan.com/basic/x` - can execute and see results
 * `flow://soko.serviceplan.com/full` - cannot execute but full access to inputs and outputs
 
+## NO AUTH
+
+Key feature of **kodosumi** is that it runs independent of **masum**. This is achieved with a clear interface kodo/masu and a default `Null` Handler. The default auth provider of **kodo** is to let all access through.
