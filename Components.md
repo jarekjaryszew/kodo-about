@@ -42,7 +42,7 @@ A [flow](./Flows.md) runs and orchestrates one or multiple crews. The entry-poin
 
 It feeds events into the shared [flow](./Flows.md) state (`Actor`). The [node](./Nodes.md) processes and persists the [flow](./Flows.md) event stream. Clients consume this event stream connecting to the [node](./Nodes.md). On _command-line-level_ (CLI) the `koco` (_kodosumi controller_) intercepts agentic frameworks with callbacks, and stream monitoring.
 
-### event state and stream
+### [event state and stream](./Events.md)
 
 #### Purpose:
 
@@ -54,13 +54,11 @@ The [flow](./Flows.md) event stream including state change requests are of inter
 1) the user who executed a [flow](./Flows.md) wants to review the result 
 2) the developer and operator want to review [flows](./Flow.md) usage, runtime/execution behavior
 
-see [event types](Events.md)
-
-### worker
+### [worker](https://docs.ray.io/en/latest/ray-references/glossary.html#term-Worker-process-worker)
 
 #### Purpose:
 
-A worker is a distributed computation/processing unit. The worker facilitates scaling. 
+A worker is a distributed computation/processing unit. The worker facilitates scaling and the concept is borrowed from [Ray](http://www.ray.io)
 
 #### Collaboration & Interfaces:
 
@@ -81,11 +79,11 @@ The purpose of the [Auth Provider](./Authentication.md) is user and group (role)
 
 All parties rely on the [Auth Provider](./Authentication.md) to authorize users and to query access and other certificates for users, nodes and flows.
 
-### driver
+### [driver](https://docs.ray.io/en/latest/ray-references/glossary.html#term-Driver)
 
 #### Purpose:
 
-The driver is the process that initiates and manages the execution of flows. It is essentially the main program that uses the Ray library to distribute and parallelize computations across a cluster of nodes. The driver is responsible for defining the tasks and actors, submitting them to the Ray cluster, and collecting the results.
+The driver is the process that initiates and manages the execution of flows. It is essentially the main program that uses the Ray library to distribute and parallelize computations across a cluster of nodes. The driver is responsible for defining the tasks and actors, submitting them to the Ray cluster, and collecting the results. The term and concept is borrowed from [Ray](http://www.ray.io).
 
 #### Collaboration & Interfaces:
 
