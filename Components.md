@@ -1,5 +1,9 @@
 ## COMPONENT OVERVIEW
 
+This document provides an overview of the key components of the kodosumi and related frameworks, focusing on its capabilities in observability, interoperability, certifiability, operability, and commerciability. 
+
+kodosumi is designed to facilitate the management and execution of agentic flows at scale and within a distributed peer network. It ensures **observability** allowing users and developers to monitor the state changes and results of flows. **Interoperability** is enabling seamless interaction between clients, nodes, and flows. The framework supports **certifiability** ensuring that only authorized users can access flows and nodes. Furthermore certified badges qualify and quantify service and quality level. **Operability** is maintained by monitoring logs, metrics, events, and alerts to ensure smooth operation of the system. Finally, **commerciability** within a marketplace facilitates trust, contracting and pricing of agents, flows and nodes.
+
 ### [registry](./Registry.md)
 
 #### Purpose:
@@ -77,3 +81,32 @@ A worker is a distributed computation/processing unit. The worker facilitates sc
 #### Collaboration & Interfaces:
 
 All parties rely on the [Auth Provider](./Authentication.md) to authorize users and to query access permissions for users.
+
+### driver
+
+#### Purpose:
+
+The driver is the process that initiates and manages the execution of flows. It is essentially the main program that uses the Ray library to distribute and parallelize computations across a cluster of nodes. The driver is responsible for defining the tasks and actors, submitting them to the Ray cluster, and collecting the results.
+
+#### Collaboration & Interfaces:
+
+The driver is executed on the _node_ and interacts with Ray components to facilitate distributed and concurrent flow execution. The worker shares the event state and stream with other workers and the [node](./Nodes.md) which drives the execution of flow in a distributed, concurrent cluster environment.
+
+### engine
+
+#### Purpose:
+
+The _engine_ is responsible to interact with the _agentic framework_ which runs the _flow_. While the driver facilitates _interaction of workers_ the _engine_ manages and oversees the processing _within_ the agentic framework.
+
+The engine facilitates:
+
+* Observability - to capture information events emitted by the agentic framework responsible to run the flow
+* Interoperability - to interact with humans and systems (form based, request/response, natural language)
+* Operability - to persist logs, metrics, events, results, and to alert
+
+The _node_, _driver_, _worker_ and _engine_ are ignorant and agnostic to the agentic framework. The _driver_ and _worker_ are concepts relevant to scale and borrowed from [Ray](https://www.ray.io/). The _engine_ on the other side intercepts the agentic framework and is the adapter.
+
+#### Collaboration & Interfaces:
+
+* the **_engine_** is executing and observing the flow running on a _worker_
+* the **_engine_** uses the flow _event state and stream_ to establish event-driven communication between agentic framework and _kodosumi_.
