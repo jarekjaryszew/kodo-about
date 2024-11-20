@@ -70,17 +70,16 @@ A cluster of workers execute (stateless) remote procedures and share stateful `A
 
 #### Purpose:
 
-The purpose of the [Auth Provider](./Authentication.md) is user and group (role) management, and permission management. All communication cross network depends and relies on the [Auth Provider](./Authentication.md) to authenticate and authorize users to access
+The purpose of the [Auth Provider](./Authentication.md) is user and group (role) management, and certificate management. All communication cross network depends and relies on the [Auth Provider](./Authentication.md) to authenticate, authorize and certify
 
-1) [nodes](./Nodes.md),
-2) [flows](./Flows.md), 
-3) [events](./Events.md) (flow details and results)
-
-A worker is a distributed computation/processing unit. The worker facilitates scaling. 
+1) users to access and manage [nodes](./Nodes.md),
+2) users to access and manage [flows](./Flows.md), 
+3) users to access and manage [events](./Events.md) including flow details and results
+4) nodes and flows to hold certificates
 
 #### Collaboration & Interfaces:
 
-All parties rely on the [Auth Provider](./Authentication.md) to authorize users and to query access permissions for users.
+All parties rely on the [Auth Provider](./Authentication.md) to authorize users and to query access and other certificates for users, nodes and flows.
 
 ### driver
 
