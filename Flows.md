@@ -53,11 +53,14 @@ The kodosumi framework must intercept and instrument agents', tasks', and tools'
 The following programming patterns implement and instrument the frameworks to interact with kodosumi via the event state and stream. 
 
 1. **Gateway Pattern** - wrap the flow application as a callable object and adopt it to trigger events
-1. **Decorator Pattern** - wrap a flow's functions or class and adopt it to trigger events
-2. **Logging Handler Pattern** - identify (filter & map) Python logging record patterns to trigger events
-3. **Event Emitter Pattern** - use explicit function calls to trigger events (observer pattern)
-4. **Class Proxy Pattern** - implement a proxy class OOP pattern into the agentic framework which triggers events
-5. **Driver Declaration Pattern** - implement a human-readable yaml driver file to trigger events
+2. **Decorator Pattern** - wrap a flow's functions or class and adopt it to trigger events
+3. **Logging Handler Pattern** - identify (filter & map) Python logging record patterns to trigger events
+4. **Stream Handler Pattern** - identify (filter & map) `STDOUT` and `STDERR` stream record patterns to trigger events
+5. **Socket Handler Pattern** - identify (filter & map) socket stream record patterns to trigger events
+6. **Unix Socket Handler Pattern** - identify (filter & map) unix socket stream record patterns to trigger events
+7. **Event Emitter Pattern** - use explicit function calls to trigger events (observer pattern)
+8. **Class Proxy Pattern** - implement a proxy class OOP pattern into the agentic framework which triggers events
+9. **Driver Declaration Pattern** - implement a human-readable yaml driver file to trigger events
 
 The following sections discuss each pattern in a bit more detail. Each pattern is described with _crewai_ in mind.
 
@@ -65,7 +68,9 @@ The following sections discuss each pattern in a bit more detail. Each pattern i
 
 This interface handles the flow as a callable. The approach borrows from PEP3333 and the web application gateway interface standards (synchronous [wsgi](https://peps.python.org/pep-3333/) and asynchronous [asgi](https://asgi.readthedocs.io/en/latest/)).
 
-The FGI (Flow Gateway interface) is designed to promote a standard interface for agentic frameworks, and workflows to interact with kodosumi and related components (masumi and sokosumi). The flow is a callable object (function or method) as the main entry point. 
+The FGI (Flow Gateway interface) is designed to promote a standard interface for agentic frameworks, and workflows to interact with kodosumi and related components (masumi and sokosumi). The FGI is implemented by an _engine_ which standardizes and coordinates communication between the _node_ and the _agent_. Engines implementing FGI can serve as a gateway between kodosumi and agentic frameworks. Agentic frameworks following the FGI protocol can use kodosumi's `koco` to run in kodosumi.
+
+The flow is a callable object (function or method) as the main entry point. 
 
 The [crewai quickstart example](https://docs.crewai.com/quickstart) with `crew.py` and **no** `main.py`:
 
@@ -82,7 +87,7 @@ The [crewai quickstart example](https://docs.crewai.com/quickstart) with `crew.p
         crew.kickoff(inputs=test)
 ```
 
-With this pattern and the kodosumi CLI command `koco` the `crew` object instance is adopted with callbacks and log interceptors to identify and trigger kodosumi events.
+With this pattern and the kodosumi CLI command `koco` the `crew` object instance is adopted with callbacks and stream interceptors to identify and trigger kodosumi events. Candidates to stream are `STDOUT`, `STDERR`, unix sockets, http sockets among others.
 
 Instead of `crewai run` (you do not use the `main.py` anymore, you only use `crew.py`) you spawn:
 
