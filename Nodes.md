@@ -140,3 +140,7 @@ The following sequence chart focuses on the lock interaction, which is not relev
 
         deactivate node
 ```
+
+### INTERACT with FLOWs
+
+See [Flows](./Flows.md#flow-properties)
