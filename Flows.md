@@ -32,9 +32,9 @@ These events are directly processed by the node and copied to the event stream f
 
 ### Node as Consumer
 
-An existing _lock_ event without a corresponding _unlock_ event renders the flow demand with `[GET /{fid}/lock/{lid}/candidate](./Endpoints.md#get-fidlocklidcandidate)`. With a corresponding _unlock_ event a lock is considered _released_ and the `GET` request returns `404 Not Found`. With a corresponding _unlock-deny_ event a lock is considered _not released_ and with a corresponding `lock-timeout` event the node throws an exception and the flow is considered _fatal_.
+An existing _lock_ event without a corresponding _unlock_ event renders the flow demand with [`GET /{fid}/lock/{lid}/candidate`](./Endpoints.md#get-fidlocklidcandidate). With a corresponding _unlock_ event a lock is considered _released_ and the `GET` request returns `404 Not Found`. With a corresponding _unlock-deny_ event a lock is considered _not released_ and with a corresponding `lock-timeout` event the node throws an exception and the flow is considered _fatal_.
 
-The node retrieves the flow state with `[GET /{fid}/state](./Endpoints.md#get-fidstate)` based on the event stream. This includes progress, process, error and runtime state information among other. The event stream endpoint itself is `[GET /{fid}/stream](./Endpoints.md#get-fidstream)`. The event stream is closed with events _final_ or _fatal_.
+The node retrieves the flow state with [`GET /{fid}/state`](./Endpoints.md#get-fidstate) based on the event stream. This includes progress, process, error and runtime state information among other. The event stream endpoint itself is [`GET /{fid}/stream`](./Endpoints.md#get-fidstream)`. The event stream is closed with events _final_ or _fatal_.
 
 Events _share_, _kill_, _restart_, and _delete_ are produced and directly consumed by the node.
 
