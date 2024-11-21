@@ -19,7 +19,7 @@ See [events](./Events.md)
 
 ### Node as Producer
 
-The node procudes the following events with the launch of a flow: `inputs`, `version`, `config`, `flow` (AKA _crew_), and _agent, tasks and tools_. Endpoint is `[POST /flow](./Endpoints.md#post-flow)`. With `[PUT /{fid}/ack](./Endpoints.md#put-nodefidack)` a client acknowledges the flow if it is not _pending_, which produces the appropriate event _acknowlege_. A `[POST /{fid}/lock/{lid}/candidate](./Endpoints.md#post-fidlocklidcandidate)` supplies input with event _candidate_ data (see [lock with nodes](./Nodes.md#lock)). If the flow does not respond within a specified time the node triggers event _unlock-timeout_ which marks the _candidate_ obsolete.
+The node procudes the following events with the launch of a flow: `inputs`, `version`, `config`, `flow` (AKA _crew_), and _agent, tasks and tools_. Endpoint is [`POST /flow`](./Endpoints.md#post-flow). With [`PUT /{fid}/ack`](./Endpoints.md#put-nodefidack) a client acknowledges the flow if it is not _pending_, which produces the appropriate event _acknowlege_. A [`POST /{fid}/lock/{lid}/candidate`](./Endpoints.md#post-fidlocklidcandidate) supplies input with event _candidate_ data (see [lock with nodes](./Nodes.md#lock)). If the flow does not respond within a specified time the node triggers event _unlock-timeout_ which marks the _candidate_ obsolete.
 
 A client manages the flow with the following _endpoints_ resulting in the corresponding _event_ produced and consumed by the node:
 
