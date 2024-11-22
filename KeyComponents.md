@@ -9,7 +9,7 @@ We talked about the following **key** components and discussed purpose, scope an
 
 **Registry Provider** - is the central repository of nodes and agents available in the network. Used to explore, navigate the list of nodes/agents and used by nodes to register and say hello. A registry provider is capable to merge and mesh registries from other registry providers and registry contributors.
 
-**Registry Contributor** - is a decentral repository of nodes and agents available in the network. Exploration, navigation, registration and handshake with nodes apply here, too. The difference to a registry provider is that the contributor can handle one registry only.
+**Registry Contributor** - is a decentral repository of nodes and agents available in the network. Exploration, navigation, registration and handshake with nodes apply here, too. The difference to a registry provider is that the contributor can handle one registry only and that it does not serve the registry directly. Instead it provides it to a registry provider.
 
 **Auth Provider** - manages and authorize interaction between users, user roles, nodes including registry providers, flows, events (results etc.).
 
@@ -34,7 +34,7 @@ We talked about the following **key** components and discussed purpose, scope an
         
 ```
 
-**note** on _inter-node agents_: the flow can use (a tool) which queries a registry provider as a data source, select an agent, and contact the node to launch an agent on a different node. In this respect, the flow impersonates a _client_ in the sequence chart above.
+**note** on _inter-node agents_: the flow can use (a tool which queries) a registry provider as a data source, select an agent, and contact the node to launch an agent on a different node. In this respect, the flow impersonates a _client_ in the sequence chart above.
 
 **note** on _authentication and permission control_: all requests above require authentication and appropriate access permissions to 1) access the registry, 2) access the node and 3) access the flow
 
