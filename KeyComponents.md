@@ -22,16 +22,16 @@ We talked about the following **key** components and discussed purpose, scope an
 ```mermaid
     sequenceDiagram 
 
-        participant contributor
-        participant registry
+        participant contributor as registry<br/>contributor
+        participant registry as registry<br/>provider
         participant client
-        participant node
+        participant node as node<br/>(driver)
+        participant flow as flow<br/>(worker)
         
         contributor ->> registry: post
         client ->> registry: get
         client ->> node: post
         node ->> flow: launch
-        
 ```
 
 **note** on _inter-node agents_: the flow can use (a tool which queries) a registry provider as a data source, select an agent, and contact the node to launch an agent on a different node. In this respect, the flow impersonates a _client_ in the sequence chart above.
@@ -45,7 +45,7 @@ We talked about the following **key** components and discussed purpose, scope an
 ```mermaid
     flowchart
 
-    client .->|1| providerA
+    client .->|1 GET| providerA
     nodeA1 -->|A| providerA
     nodeA2 -->|A| providerA
 
@@ -54,12 +54,12 @@ We talked about the following **key** components and discussed purpose, scope an
 
     providerB <-->|B| providerA
     nodeB1 -->|A| providerB
-    nodeB1 .->|3| providerB
+    nodeB1 .->|3 GET| providerB
     contributorD <-->|B| providerB
     nodeD1 -->|A| contributorD
 
-    client .->|2| nodeB1
-    nodeB1 .->|4| nodeC1
+    client .->|2 POST| nodeB1
+    nodeB1 .->|4 POST| nodeC1
 ```
 
 **comments:** This activity or interaction diagram exemplifies the component interaction.
