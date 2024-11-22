@@ -5,7 +5,7 @@ design and other docs about kodosumi
 ## Concepts
 
 * [UseCases](./UseCases.md)
-* [Components](./Components.md)
+* [Components](./Components.md) and [Key Components](./KeyComponents.md)
   * [Registry](./Registry.md)
   * [Nodes](./Nodes.md)
   * [Handshake of Nodes and Registry](./Handshake.md)
