@@ -64,6 +64,6 @@ We talked about the following **key** components and discussed purpose, scope an
 
 **comments:** This activity or interaction diagram exemplifies the component interaction.
 
-**registry interaction**: **_(A)_** a node registers to a registry provider or contributor. **_(B)_** a registry provider or contributor registers to another registry provider and receives the list of nodes and agents the provider can access.
+**registry interaction**: **_(A)_** a node registers to a registry provider or contributor. **_(B)_** a registry provider or contributor registers to another registry provider and receives the list of nodes and agents the provider/contributor can access. The contributor can silently ignore the response as it considers itself as a contributor, only.
 
 **flow interaction:** **_(1)_** a client explores the registry (`providerA`). **_(2)_** The client selected and now connects to a node related to the target agent. **_(3)_** During flow execution the agent reaches a point where it seeks to delegate work to another agent. The flow connects to a registry provider (`providerB`) it identify the remote agent. The selection is beyond the scope of this comment. **_(4)_** With the matching agent and corresponding node the flow running still on `nodeB1` can now connect to `nodeC1` hosting the target agent. The remote agent response is consumed by the flow running on `nodeB1`.
