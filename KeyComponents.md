@@ -39,3 +39,29 @@ We talked about the following **key** components and discussed purpose, scope an
 **note** on _authentication and permission control_: all requests above require authentication and appropriate access permissions to 1) access the registry, 2) access the node and 3) access the flow
 
 **note** on _terms_: I use _node_ as the brain node. The node is indeed the _driver_ of the flow. The flow is then running on _workers_. _Workers_ feature scalabililty and are a component of the cluster but can run on a single machine, too.
+
+## INTERACTION DIAGRAM
+
+```mermaid
+    flowchart
+
+    client .->|1| providerA
+    nodeA1 -->|A| providerA
+    nodeA2 -->|A| providerA
+
+    contributorC -->|B| providerA
+    nodeC1 -->|A| contributorC
+
+    providerB -->|B| providerA
+    nodeB1 -->|A| providerB
+    nodeB1 .->|3| providerB
+    contributorD -->|B| providerB
+    nodeD1 -->|A| contributorD
+
+    client .->|2| nodeB1
+    nodeB1 .->|4| nodeC1
+```
+
+**comments:** This activity or interaction diagram exemplifies the component interaction.
+**registry interaction**: **_(A)_** a node registers to a registry provider or contributor. **_(B)_** a registry provider or contributor registers to another registry provider.
+**flow interaction:** **_(1)_** a client explores the registry (`providerA`). **_(2)_** The client selected and now connects to a node related to the target agent. **_(3)_** During flow execution the agent reaches a point where it seeks to delegate work to another agent. The flow connects to a registry provider (`providerB`) it identify the remote agent. The selection is beyond the scope of this comment. **_(4)_** With the matching agent and corresponding node the flow running still on `nodeB1` can now connect to `nodeC1` hosting the target agent. The remote agent response is consumed by the flow running on `nodeB1`.
