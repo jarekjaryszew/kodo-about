@@ -49,13 +49,13 @@ We talked about the following **key** components and discussed purpose, scope an
     nodeA1 -->|A| providerA
     nodeA2 -->|A| providerA
 
-    contributorC -->|B| providerA
+    contributorC <-->|B| providerA
     nodeC1 -->|A| contributorC
 
-    providerB -->|B| providerA
+    providerB <-->|B| providerA
     nodeB1 -->|A| providerB
     nodeB1 .->|3| providerB
-    contributorD -->|B| providerB
+    contributorD <-->|B| providerB
     nodeD1 -->|A| contributorD
 
     client .->|2| nodeB1
