@@ -14,4 +14,4 @@ classDiagram
 - kodosumi-base : contains all the models (DTOs) and the base connector interface
 - kodosumi-registry
 - kodosumi-node
-- kodosumi-connector-* - those will contain concrete implementations of the connectors
+- kodosumi-connector-* - those will contain concrete implementations of the connectors/workers
