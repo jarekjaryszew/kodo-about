@@ -1,6 +1,6 @@
 # Workers
 ## Overview
-- Workers will be implemented by adding a connector to a existing agent project
+- Workers will be implemented by adding a connector to an existing agent project
 - Workers wil expose an interface towards the node
 - Flow developer will have to create a configuration that glues worker with flows
 - Node address will be passed by env variables
@@ -10,7 +10,7 @@
 
 ## Scaling and lifetime
 ### Externally managed workers
-- This workers will automatically register themselves with their node on startup.
+- These workers will automatically register themselves with their node on startup.
 - Node will expose hooks so the external manager could perform actions on the infrastructure
 - Node will expose endpoints containing current queue size, pending requests (details TBD) and other data necessary for external manager to decide
 
